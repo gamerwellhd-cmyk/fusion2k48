@@ -1,0 +1,5 @@
+{
+  "name": "2048 Fusion",
+  "description": "A fast-paced 2048 merge game where you shoot blocks from the bottom to create massive numbers.",
+  "requestFramePermissions": []
+}

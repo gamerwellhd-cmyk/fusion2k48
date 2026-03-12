@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-petrol-50: #cfd8da;
+  --color-petrol-100: #b7c3c5;
+  --color-petrol-200: #9cb0b3;
+  --color-petrol-300: #80a7ac;
+  --color-petrol-400: #6c9a9f;
+  --color-petrol-500: #4d939a;
+  --color-petrol-600: #085b6f;
+  --color-petrol-700: #1c514e;
+  --color-petrol-800: #2a4043;
+  --color-petrol-900: #08262e;
+  --color-petrol-950: #05181d;
+}
