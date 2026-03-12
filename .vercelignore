@@ -6,8 +6,3 @@ npm-debug.log
 .env.local
 .DS_Store
 .vscode
-src
-public
-index.html
-tsconfig.json
-vite.config.ts
