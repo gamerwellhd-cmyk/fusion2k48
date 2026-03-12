@@ -68,6 +68,7 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ onStart, onViewLeaderboard 
     }
 
     setIsLoading(true);
+    console.log(`Attempting ${mode}...`);
 
     try {
       if (mode === 'register') {
@@ -110,7 +111,8 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ onStart, onViewLeaderboard 
       } else if (errorCode === 'auth/invalid-email') {
         setError('Digite um e-mail valido.');
       } else {
-        setError('Nao foi possivel autenticar. Tente novamente.');
+        console.error('Firebase Auth Error:', authError);
+        setError(`Erro de autenticacao: ${errorCode || errorMessage || 'Tente novamente.'}`);
       }
     } finally {
       setIsLoading(false);

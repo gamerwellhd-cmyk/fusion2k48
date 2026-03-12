@@ -102,13 +102,22 @@ export const initializeFirebase = async (): Promise<void> => {
       return;
     }
 
+    // Add a hard timeout for initialization to prevent infinite "Initializing" screen
+    const timeoutId = window.setTimeout(() => {
+      console.warn('Firebase initialization timed out (10s)');
+      unsubscribe();
+      resolve(); // Resolve anyway so the app can start in offline mode
+    }, 10000);
+
     const unsubscribe = onAuthStateChanged(
       auth,
       () => {
+        clearTimeout(timeoutId);
         unsubscribe();
         resolve();
       },
       (error) => {
+        clearTimeout(timeoutId);
         // Keep app available even if persisted auth session fails to restore.
         console.warn('Firebase auth listener error:', error);
         unsubscribe();
