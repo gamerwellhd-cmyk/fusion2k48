@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { motion } from 'motion/react';
-import { Play, User, Trophy, Mail, Lock, Loader2 } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
+import { Play, User, Trophy, Mail, Lock, Loader2, Download, X } from 'lucide-react';
 import * as firebase from '../services/firebase';
 import { playerService } from '../services/playerService';
+import { usePWAInstall } from '../hooks/usePWAInstall';
 
 interface SplashScreenProps {
   onStart: (username: string) => void;
@@ -18,6 +19,8 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ onStart, onViewLeaderboard 
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [sessionUsername, setSessionUsername] = useState<string | null>(null);
+  const [dismissedInstall, setDismissedInstall] = useState(false);
+  const { isInstallableApp, isAppInstalled, installApp } = usePWAInstall();
 
   useEffect(() => {
     const currentUser = firebase.getCurrentUser();
@@ -129,6 +132,56 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ onStart, onViewLeaderboard 
         </h1>
         <p className="font-mono text-[10px] opacity-40 uppercase tracking-[0.3em]">Advanced Strategy Engine</p>
       </motion.div>
+
+      {/* PWA Install Prompt */}
+      <AnimatePresence>
+        {isInstallableApp && !isAppInstalled && !dismissedInstall && (
+          <motion.div
+            initial={{ opacity: 0, y: -20, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -20, scale: 0.9 }}
+            className="absolute top-8 right-8 max-w-xs"
+          >
+            <div className="relative">
+              {/* Speech bubble */}
+              <div className="bg-petrol-600/95 border-2 border-petrol-500 rounded-3xl p-4 shadow-xl backdrop-blur-md">
+                <div className="flex items-start gap-3">
+                  <motion.div
+                    animate={{ scale: [1, 1.1, 1] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                    className="flex-shrink-0"
+                  >
+                    <Download className="text-white" size={24} />
+                  </motion.div>
+                  <div className="flex-1">
+                    <p className="text-sm font-bold text-white mb-2">Instale o app!</p>
+                    <p className="text-xs text-petrol-100 mb-3 leading-relaxed">
+                      Jogue offline e acesse rápido na tela inicial do seu celular.
+                    </p>
+                    <button
+                      onClick={() => {
+                        installApp();
+                        setDismissedInstall(true);
+                      }}
+                      className="w-full py-2 bg-white text-petrol-600 font-bold text-xs rounded-xl hover:bg-petrol-100 transition-colors"
+                    >
+                      Instalar agora
+                    </button>
+                  </div>
+                  <button
+                    onClick={() => setDismissedInstall(true)}
+                    className="flex-shrink-0 text-petrol-200 hover:text-white transition-colors"
+                  >
+                    <X size={18} />
+                  </button>
+                </div>
+              </div>
+              {/* Arrow pointing down */}
+              <div className="absolute -bottom-2 right-6 w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-petrol-600" />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <div className="w-full max-w-md bg-petrol-900/40 border-2 border-petrol-800/50 rounded-[32px] p-8 shadow-2xl backdrop-blur-md">
         {sessionUsername && (
