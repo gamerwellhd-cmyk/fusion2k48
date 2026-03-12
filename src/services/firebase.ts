@@ -25,7 +25,7 @@ const firebaseConfig = {
   apiKey: 'AIzaSyDntWB97lVscLepvDe_t1a6Z5eYnhFUwXo',
   authDomain: 'fusion2048.firebaseapp.com',
   projectId: 'fusion2048',
-  databaseURL: 'https://fusion2048-default-rtdb.firebaseio.com/',
+  databaseURL: 'https://fusion2048-default-rtdb.firebaseio.com',
   storageBucket: 'fusion2048.firebasestorage.app',
   messagingSenderId: '913585696575',
   appId: '1:913585696575:web:5a6e7cb82b816120062d8a',
