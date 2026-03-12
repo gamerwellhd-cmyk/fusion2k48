@@ -11,58 +11,6 @@
   "categories": ["games"],
   "screenshots": [
     {
-      "src": "/icon-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "form_factor": "narrow"
-    },
-    {
-      "src": "/icon-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ],
-  "icons": [
-    {
-      "src": "/icon-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/icon-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "/icon-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/icon-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable"
-    }
-  ]
-}
-
-{
-  "name": "2048 Fusion",
-  "short_name": "2048 Fusion",
-  "description": "Play the ultimate 2048 game with merge mechanics, power-ups, and real-time leaderboards. Drop numbers to merge and reach 2048!",
-  "start_url": "/",
-  "display": "standalone",
-  "scope": "/",
-  "orientation": "portrait-primary",
-  "background_color": "#0a1428",
-  "theme_color": "#0ea5e9",
-  "categories": ["games"],
-  "screenshots": [
-    {
       "src": "/icon-192x192.svg",
       "sizes": "192x192",
       "type": "image/svg+xml",
