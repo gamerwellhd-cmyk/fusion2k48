@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Zap, Bomb, RefreshCw, ChevronLeft, ChevronRight } from 'lucide-react';
-import { BlockValue, SpecialType } from '../types';
+import { BlockValue, SpecialType } from '../../../types';
 import { getBlockColor } from '../utils/gameLogic';
 import { specials } from '../systems/powerups';
 

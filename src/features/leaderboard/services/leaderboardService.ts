@@ -1,5 +1,5 @@
-import { LeaderboardEntry } from '../types';
-import * as firebase from './firebase';
+import { LeaderboardEntry } from '../../../types';
+import * as firebase from '../../../services/firebase';
 
 const LEADERBOARD_KEY = '2048_fusion_leaderboard';
 let cachedScores: LeaderboardEntry[] = [];

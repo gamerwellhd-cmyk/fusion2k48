@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Play, User, Trophy, Mail, Lock, Loader2, Download, X } from 'lucide-react';
-import * as firebase from '../services/firebase';
-import { playerService } from '../services/playerService';
-import { usePWAInstall } from '../hooks/usePWAInstall';
+import * as firebase from '../../../services/firebase';
+import { playerService } from '../../player/services/playerService';
+import { usePWAInstall } from '../../../hooks/usePWAInstall';
 
 interface SplashScreenProps {
   onStart: (username: string) => void;
@@ -188,7 +188,7 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ onStart, onViewLeaderboard 
         )}
       </AnimatePresence>
 
-      <div className="w-full max-w-md bg-petrol-900/40 border-2 border-petrol-800/50 rounded-[32px] p-8 shadow-2xl backdrop-blur-md">
+      <div className="w-full max-w-md bg-petrol-900/40 border-2 border-petrol-800/50 rounded-[32px] p-8 sm:p-8 shadow-2xl backdrop-blur-md">
         {sessionUsername && (
           <div className="mb-4 p-3 bg-petrol-800/30 border border-petrol-700/40 rounded-2xl">
             <p className="text-[10px] font-mono uppercase tracking-widest text-petrol-300 mb-2">Sessao ativa</p>

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, ShoppingCart, Coffee, Repeat2, AlertCircle } from 'lucide-react';
-import { playerService } from '../services/playerService';
-import { RESTART_TOKEN_COST } from '../constants';
+import { playerService } from '../../player/services/playerService';
+import { RESTART_TOKEN_COST } from '../../../constants';
 
 interface RestartShopProps {
   username: string;

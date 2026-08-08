@@ -1,5 +1,5 @@
 import { Bomb, Snowflake, Sparkles, MoveHorizontal } from 'lucide-react';
-import { BlockData, SpecialType } from '../types';
+import { SpecialType } from '../../../types';
 
 export interface Special {
   id: SpecialType;

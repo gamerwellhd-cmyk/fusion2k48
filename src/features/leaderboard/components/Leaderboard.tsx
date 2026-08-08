@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Trophy, ArrowLeft, Medal, Calendar, Cloud } from 'lucide-react';
 import { leaderboardService } from '../services/leaderboardService';
-import * as firebase from '../services/firebase';
+import * as firebase from '../../../services/firebase';
 
 interface LeaderboardProps {
   onBack: () => void;

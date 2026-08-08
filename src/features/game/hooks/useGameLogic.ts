@@ -1,9 +1,9 @@
 import { useState, useEffect, useCallback } from 'react';
-import { BlockData, BlockValue, GameState } from '../types';
-import { COLS, ROWS, MERGE_SPEED, ANIMATION_SPEED, EXPLOSION_SPEED, SCORE_PER_TNT_BLOCK, ANALYSIS_DELAY } from '../constants';
+import { BlockData, BlockValue, GameState } from '../../../types';
+import { COLS, ROWS, MERGE_SPEED, ANIMATION_SPEED, EXPLOSION_SPEED, SCORE_PER_TNT_BLOCK, ANALYSIS_DELAY } from '../../../constants';
 import { generateRandomValue, createInitialGrid } from '../utils/gameLogic';
-import { leaderboardService } from '../services/leaderboardService';
-import { playerService } from '../services/playerService';
+import { leaderboardService } from '../../leaderboard/services/leaderboardService';
+import { playerService } from '../../player/services/playerService';
 
 export const useGameLogic = (username?: string) => {
   const [grid, setGrid] = useState<(BlockData | null)[][]>(createInitialGrid());

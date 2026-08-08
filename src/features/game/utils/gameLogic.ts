@@ -1,5 +1,5 @@
-import { BlockData, BlockValue, SpecialType } from '../types';
-import { COLS, ROWS } from '../constants';
+import { BlockData, BlockValue, SpecialType } from '../../../types';
+import { COLS, ROWS } from '../../../constants';
 import { specials } from '../systems/powerups';
 
 export const generateRandomValue = (): BlockValue => {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import { ChevronUp } from 'lucide-react';
-import { COLS, ROWS } from '../constants';
+import { COLS, ROWS } from '../../../constants';
 import { useGameLogic } from '../hooks/useGameLogic';
 import Block from './Block';
 import LaunchDock from './LaunchDock';

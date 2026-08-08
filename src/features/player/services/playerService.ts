@@ -4,8 +4,8 @@
  * Syncs with Firebase for cloud storage
  */
 
-import { LeaderboardEntry } from '../types';
-import * as firebase from './firebase';
+import { LeaderboardEntry } from '../../../types';
+import * as firebase from '../../../services/firebase';
 
 export interface PlayerProfile {
   username: string;

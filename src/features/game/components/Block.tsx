@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Bomb } from 'lucide-react';
-import { BlockData } from '../types';
+import { BlockData } from '../../../types';
 import { getBlockColor } from '../utils/gameLogic';
 import { specials } from '../systems/powerups';
 
